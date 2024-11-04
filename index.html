@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>1.Write a Javascript program that removes the duplicate elements from an array.</h2>
+    <h2>2.Write a JavaScript program to create a new string without the first and last characters of a given string.</h2>
+    <h2>3.Write a function that takes an array of strings as input and prints each element to the console using the forEach method.</h2>
+    <h2>4.Write a function that takes an array of numbers as input and returns true if any of the numbers are negative, otherwise false, using the some method.</h2>
+    <h2>5.Write a function that takes an array of numbers as input, filters out the even numbers, and then returns the sum of the remaining numbers using a combination of filter and reduce methods.</h2>
+</body>
+<script>
+//1.Write a Javascript program that removes the duplicate elements from an array.
+//with numbers 
+    let array = [1,2,3,4,1,3,2,4,5,5,6,23,2];
+    function removeDuplicates(array) {
+    return array.filter((item,
+        index) => array.indexOf(item) === index);
+    }
+    console.log(removeDuplicates(array));
+//2.Write a JavaScript program to create a new string without the first and last characters of a given string.
+    function First_end(str){
+        return str.substring(1,str.length-1);
+
+    }
+    console.log(First_end("Rajesh"))
+    console.log(First_end("Shiva"))
+
+
+//3.Write a function that takes an array of strings as input and prints each element to the console using the forEach method.
+const array1 = ['Apple', 'Banana', 'Orange'];
+array1.forEach((element) => console.log(element));
+
+//4.Write a function that takes an array of numbers as input and returns true if any of the numbers are negative, otherwise false, using the some method.
+function hasNegNum(numbers) {
+    return numbers.some(num => num < 0);
+}
+console.log(hasNegNum([1, 2, 3])); // false
+console.log(hasNegNum([1, -2, 3])); // true
+console.log(hasNegNum([-1, 2, 3])); // true
+console.log(hasNegNum([0, 1, 2])); // false
+
+//5.Write a function that takes an array of numbers as input, filters out the even numbers, and then returns the sum of the remaining numbers using a combination of filter and reduce methods.
+function sumOfOddNumbers(numbers) {
+    // Filter out even numbers and keep only odd numbers
+    const oddNumbers = numbers.filter(num => num % 2 !== 0);
+    // Sum the remaining odd numbers
+    const sum = oddNumbers.reduce((accumulator, current) => accumulator + current, 0);
+    return sum;
+}
+console.log(sumOfOddNumbers([1, 2, 3, 4, 5])); // 9 (1 + 3 + 5)
+console.log(sumOfOddNumbers([10, 20, 30]));     // 0 (no odd numbers)
+console.log(sumOfOddNumbers([7, 8, 9, 10]));    // 16 (7 + 9)
+</script>
+</html>
